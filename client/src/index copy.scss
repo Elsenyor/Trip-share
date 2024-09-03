@@ -1,0 +1,124 @@
+// * {
+// 	margin: 0;
+// 	padding: 0;
+// 	box-sizing: border-box;
+// }
+// :root {
+// 	--ddv-primary: #2f3a33;
+
+// 	--bs-primary: var(--ddv-primary);
+// 	.btn-dark {
+// 		--bs-btn-bg: #2f3a33;
+// 	}
+// }
+// [data-bs-theme="dark"] {
+// 	.ddv-icon {
+// 		filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+// 	}
+// }
+
+// div#root {
+// 	min-height: 100%;
+// 	display: flex;
+// 	flex-direction: column;
+// }
+
+// .custom-footer {
+// 	width: 100%;
+// 	max-height: 100px;
+// 	padding: 1rem;
+// 	text-align: center;
+// 	background-color: var(--bs-primary);
+// 	position: fixed;
+// 	bottom: 0;
+// 	left: 0;
+// 	z-index: 3;
+// }
+
+// header {
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	z-index: 1000;
+// 	background-color: var(--bs-primary);
+// }
+
+// .main-container {
+// 	.card-item {
+// 	}
+// 	flex-grow: 1;
+// 	margin-top: 150px;
+// 	margin-bottom: 100px;
+// 	padding: 1rem;
+// }
+
+// div#root > header {
+// 	padding: 1rem;
+// 	text-align: center;
+// 	background-color: var(--bs-primary);
+// }
+// div#root > header {
+// 	width: 100%;
+// 	max-height: 150px;
+// }
+// // div#root > footer {
+// // 	width: 100%;
+// // 	max-height: 100px;
+// // }
+// .logo-container {
+// 	max-height: 120px;
+// }
+
+// nav.nav-pos {
+// 	display: flex;
+// 	justify-content: flex-end;
+// 	position: absolute;
+// 	right: 1rem;
+// }
+
+// .header-link {
+// 	text-decoration: none;
+// 	color: rgb(255, 255, 255);
+// }
+// li {
+// 	list-style-type: none;
+// }
+// h2 {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// }
+
+// /* <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 900 */
+
+// .cinzel-card {
+// 	font-family: "Cinzel", serif;
+// 	font-optical-sizing: auto;
+// 	font-weight: 400;
+// 	font-style: normal;
+// }
+
+// div#root > header img {
+// 	width: 60px;
+// 	border-radius: 30px;
+// }
+
+// #NavBar-button {
+// 	border: none;
+// 	border-color: unset;
+// 	outline: none;
+// }
+
+// .card-container {
+// 	width: 15vw;
+// 	height: 50vh;
+// 	align-items: center;
+// 	justify-content: center;
+// 	position: relative;
+// }
+// div#root > main {
+// 	flex-grow: 1;
+// 	padding: 1rem;
+// }
