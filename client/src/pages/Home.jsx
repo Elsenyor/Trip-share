@@ -2,7 +2,7 @@ import EntryList from "../components/EntryList";
 
 const Home = () => {
 	return (
-		<div className="container">
+		<div className="container d-flex flex-column">
 			<EntryList />
 		</div>
 	);

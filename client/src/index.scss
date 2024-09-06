@@ -1,5 +1,6 @@
 // Import Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap-icons/font/bootstrap-icons.css";
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
@@ -20,6 +21,9 @@ body {
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh; // El cuerpo ocupa toda la altura de la ventana
 }
 
 h1,
@@ -59,16 +63,43 @@ header {
 	}
 }
 
+// El contenedor principal ahora ocupa el espacio disponible
+.container {
+	flex: 1;
+	overflow-y: auto; // Agregar barra de desplazamiento si el contenido es demasiado largo
+}
+
+// Estilos para el footer
 .custom-footer {
 	background-color: #ffffff;
 	border-top: 1px solid $border-color;
 	text-align: center;
-	padding: 0.75rem 0;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); // Sombra para mayor visibilidad
 
 	p {
 		margin: 0;
 		font-size: 0.875rem;
 		color: $secondary-color;
+	}
+
+	.footer-icons {
+		margin-bottom: 1rem;
+
+		a {
+			color: $primary-color;
+			font-size: 1.5rem;
+			&:hover {
+				color: darken($primary-color, 10%);
+			}
+		}
+	}
+
+	.bd-mode-toggle {
+		position: relative;
 	}
 }
 
@@ -109,29 +140,29 @@ header {
 	}
 }
 
-.pagination {
-	display: flex;
-	justify-content: center;
-	padding: 1rem 0;
+// .pagination {
+// 	display: flex;
+// 	justify-content: center;
+// 	padding: 1rem 0;
 
-	.page-item {
-		margin: 0 0.25rem;
+// 	.page-item {
+// 		margin: 0 0.25rem;
 
-		.page-link {
-			color: $accent-color;
-			border: none;
-			&:hover {
-				color: darken($accent-color, 10%);
-			}
-		}
+// 		.page-link {
+// 			color: $accent-color;
+// 			border: none;
+// 			&:hover {
+// 				color: darken($accent-color, 10%);
+// 			}
+// 		}
 
-		&.active .page-link {
-			background-color: $accent-color;
-			border-color: $accent-color;
-			color: #ffffff;
-		}
-	}
-}
+// 		&.active .page-link {
+// 			background-color: $accent-color;
+// 			border-color: $accent-color;
+// 			color: #ffffff;
+// 		}
+// 	}
+// }
 
 // Estilos para el tema oscuro
 [data-bs-theme="dark"] {
