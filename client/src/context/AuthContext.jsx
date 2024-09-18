@@ -4,10 +4,8 @@ import PropTypes from "prop-types";
 import toast from "react-hot-toast";
 import { singUpService, loginService, getPrivateProfileService, updateUserAndEmailService, updateAvatarService } from "../../services/userServices";
 
-// Creamos el contexto
 export const AuthContext = createContext(null);
 
-// Creamos el provider
 export const AuthProvider = ({ children }) => {
 	const navigate = useNavigate();
 
@@ -20,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 				const user = await getPrivateProfileService(authToken);
 				setAuthUser(user);
 			} catch (error) {
-				toast.error(error.message);
+				toast.error("Sesión expirada, vuelva a iniciar sesión");
 			}
 		};
 		if (authToken) {

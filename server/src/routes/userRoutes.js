@@ -13,7 +13,10 @@ import {
 } from '../controllers/users/index.js';
 
 // Importamos las funciones controladoras intermedias.
-import { authUserController } from '../middlewares/index.js';
+import {
+    authUserController,
+    authUserOptionalController,
+} from '../middlewares/index.js';
 
 // Creamos un router.
 const router = express.Router();
@@ -28,7 +31,7 @@ router.put('/api/users/validate/:registrationCode', validateUserController);
 router.post('/api/users/login', loginUserController);
 
 // Middleware que retorna info privada de un usuario.
-router.get('/api/users', authUserController, getOwnUserController);
+router.get('/api/users', authUserOptionalController, getOwnUserController);
 
 // Middleware que retorna info pública de un usuario.
 router.get('/api/users/:userId', getPublicUserController);
