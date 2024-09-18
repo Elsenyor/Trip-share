@@ -22,10 +22,10 @@ import {
 const router = express.Router();
 
 // Middleware que permite crear una entrada.
-router.post('/api/entries', authUserController, newEntryController);
+router.post('/api/entries', authUserOptionalController, newEntryController);
 
 // Middleware que retorna el listado de entradas.
-router.get('/api/entries', authUserOptionalController, listEntriesController);
+router.get('/api/entries', listEntriesController);
 
 // Middleware que retorna info de una entrada concreta.
 router.get(
