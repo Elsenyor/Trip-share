@@ -23,7 +23,7 @@ const UserInfoBar = () => {
 						</Link>
 					) : (
 						<Link to="/users/profile">
-							<img src="./public/188989.png" alt={`Avatar de ${authUser.username}`} />
+							<img src="./188989.png" alt={`Avatar de ${authUser.username}`} />
 						</Link>
 					)}
 				</div>

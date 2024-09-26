@@ -7,7 +7,7 @@ import UserInfoBar from "./UserInfoBar";
 const Header = () => {
 	const { authUser } = useContext(AuthContext);
 	return (
-		<header className="header sticky-top bg-white border-bottom">
+		<header className="header sticky-top bg-background-color-dark border-bottom">
 			<div className="row mx-0 align-items-center">
 				{!authUser ? (
 					<>
