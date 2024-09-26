@@ -7,7 +7,6 @@ const { VITE_API_URL } = import.meta.env;
 import { voteEntryService } from "../../services/entryServices";
 
 const EntryListItem = ({ entry }) => {
-	console.log("ENTRADA", entry);
 	const [rating, setRating] = useState(entry.votes);
 	const { authUser } = useContext(AuthContext);
 
