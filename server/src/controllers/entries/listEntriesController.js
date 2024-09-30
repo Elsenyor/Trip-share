@@ -7,12 +7,12 @@ import selectTotalNumberOfEntriesModel from '../../models/entries/selectTotalNum
 const listEntriesController = async (req, res, next) => {
     try {
         // Obtenemos los query params corespondientes.
-        let { author, place, keyword, page = 1 } = req.query;
+        let { author, place, keyword, page = 1, entryQuantity = 4 } = req.query;
         // Modificamos el tipo de la variable page de String a Number.
         page = Number(page);
 
-        // Calculamos el offset badado en la página actual (8 entradas por página).
-        const limit = 4;
+        // Calculamos el offset badado en la página actual (dependiendo del screen size del cliente mostrara 4 en vista movil-tablet y 8 en version pc).
+        const limit = Number(entryQuantity);
         const offset = (page - 1) * limit;
 
         // Obtenemos el número total de entradas.
@@ -21,8 +21,6 @@ const listEntriesController = async (req, res, next) => {
         // Calculamos el número total de páginas.
         const totalPages = Math.ceil(totalEntries / limit);
 
-        // Obtenemos el listado de entradas. Es importante indicarle a JavaScript que la
-        // propiedad "user" podría ser undefined.
         const entries = await selectAllEntriesModel(
             author,
             place,
@@ -37,10 +35,8 @@ const listEntriesController = async (req, res, next) => {
             status: 'ok',
             data: {
                 totalPages,
-                // Si queremos ir a la página anterior será "page - 1" salvo si estamos ya en la página 0.
                 prevPage: page > 1 ? page - 1 : null,
                 currentPage: page,
-                // Si queremos ir a la página siguiente será "page + 1" salvo si estamos ya en la última página.
                 nextPage: page < totalPages ? page + 1 : null,
                 entries,
                 totalEntries,

@@ -11,10 +11,11 @@ const useEntries = () => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [totalPages, setTotalPages] = useState(null);
 	const [totalEntries, setTotalEntries] = useState(null);
+	const [entryQuantity, setEntryQuantity] = useState(null);
 	const fetchEntries = async (page) => {
+		if (!entryQuantity) return;
 		try {
-			const { entries, totalPages, totalEntries } = await selectEntriesPageService(page);
-			//
+			const { entries, totalPages, totalEntries } = await selectEntriesPageService(page, entryQuantity);
 			setCurrentEntries(currentEntries.concat(entries.filter((entry) => !currentEntries.some((e) => e.id === entry.id))));
 			setPrevPage(currentPage - 1 < 1 ? null : currentPage - 1);
 			setNextPage(currentPage + 1 > totalPages ? null : currentPage + 1);
@@ -25,12 +26,23 @@ const useEntries = () => {
 		}
 	};
 	useEffect(() => {
-		fetchEntries(currentPage);
-	}, [currentPage]);
+		fetchEntries(currentPage, entryQuantity);
+	}, [entryQuantity]);
 	const goToPage = (page) => {
 		setCurrentPage(page);
 	};
-	return { entries: currentEntries, prevPage, nextPage, currentPage, totalPages, totalEntries, goToPage, fetchEntries };
+	return {
+		entries: currentEntries,
+		prevPage,
+		nextPage,
+		currentPage,
+		totalPages,
+		totalEntries,
+		goToPage,
+		entryQuantity,
+		fetchEntries,
+		setEntryQuantity,
+	};
 };
 
 export default useEntries;
