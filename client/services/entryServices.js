@@ -25,9 +25,9 @@ export const selectAllEntriesService = async () => {
 	return body.data;
 };
 
-export const selectEntriesPageService = async (page = 1) => {
+export const selectEntriesPageService = async (page = 1, entryQuantity) => {
 	// Ajustar la URL para incluir el parámetro de página
-	const res = await fetch(`${VITE_API_URL}/api/entries?page=${page}`, setHeaders());
+	const res = await fetch(`${VITE_API_URL}/api/entries?page=${page}&entryQuantity=${entryQuantity}`, setHeaders());
 
 	const body = await res.json();
 
