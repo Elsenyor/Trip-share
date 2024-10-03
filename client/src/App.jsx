@@ -15,12 +15,15 @@ import RegisterPromo from "./pages/RegisterPromo";
 // Inicializamos el componente.
 const App = () => {
 	return (
-		<>
-			<Header />
+		<div className="app d-flex flex-column min-vh-100">
+			<div className="">
+				<Header />
+			</div>
+
 			{/* Set up toaster error or success messages */}
 			<Toaster position="top-center" toastOption={{ duration: 6000 }} />
 			{/* Element to render  */}
-			<main className="container my-4">
+			<main className="flex-grow-1 container my-4 d-flex">
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="*" element={<NotFound />} />
@@ -33,9 +36,10 @@ const App = () => {
 					<Route path="/RegisterPromo" element={<RegisterPromo />} />
 				</Routes>
 			</main>
-
-			<Footer />
-		</>
+			<div>
+				<Footer />
+			</div>
+		</div>
 	);
 };
 
