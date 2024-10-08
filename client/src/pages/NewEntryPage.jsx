@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import toast from "react-hot-toast";
-
 import { createEntryService } from "../../services/entryServices";
 
 const NewEntryPage = () => {
@@ -32,7 +31,6 @@ const NewEntryPage = () => {
 			toast.error(error.message);
 		}
 	};
-
 	return (
 		<main className="d-flex align-items-center py-4 bg-body-tertiary">
 			<div className="form-signin w-50 m-auto">

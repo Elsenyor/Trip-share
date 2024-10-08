@@ -13,8 +13,8 @@ const LoginPage = () => {
 	};
 	if (authUser) return <Navigate to="/"></Navigate>;
 	return (
-		<main className="d-flex align-items-center py-4 bg-body-tertiary">
-			<div className="form-signin w-50 m-auto">
+		<div className="d-flex align-items-center bg-body-tertiary col">
+			<div className="form-signin w-100 h-50 m-auto">
 				<div className="w-50 m-auto">
 					<form onSubmit={handleLogin}>
 						<img className="mb-4" src="/takeoff.svg" alt="" width="72" height="57"></img>
@@ -35,7 +35,7 @@ const LoginPage = () => {
 					</form>
 				</div>
 			</div>
-		</main>
+		</div>
 	);
 };
 
