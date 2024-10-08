@@ -30,16 +30,14 @@ export const savePhoto = async (file, width) => {
         const sharpImg = sharp(file.data);
 
         // Redimensionamos la imagen.
-        sharpImg.resize(width);
+        // sharpImg.resize(width);
 
         // Generamos un nombre único para la imagen.
         const imgName = `${crypto.randomUUID()}.png`;
-
-        // Ruta absoluta donde almacenaremos la imagen.
         const imgPath = path.join(uploadsDir, imgName);
 
         // Guardamos la imagen en la carpeta de subida de archivos.
-        await sharpImg.toFile(imgPath);
+        await sharpImg.resize(width).toFile(imgPath);
 
         // Retornamos el nombre generado.
         return imgName;

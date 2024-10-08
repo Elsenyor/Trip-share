@@ -2,26 +2,18 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
 
-// importamos los servicios
-
 const RegisterPage = () => {
 	const { authRegister, authUser } = useContext(AuthContext);
-
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [repeatedPass, setRepeatedPass] = useState("");
-
-	// Funcion que maneja el envio del formulario
 	const handleSubmit = async (e) => {
 		try {
 			e.preventDefault();
-			// Validamos que las contraseñas sean iguales
 			if (password !== repeatedPass) {
 				throw new Error("Las contraseñas no coinciden");
 			}
-
-			// Realizamos la petición al servidor
 			authRegister(username, email, password);
 		} catch (error) {
 			alert(error.message);
